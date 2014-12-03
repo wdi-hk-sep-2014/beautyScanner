@@ -25,6 +25,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'arel', '6.0.0.beta2'
 
+# Show Google Maps in rails application
+gem 'gmaps4rails'
+
+# Geocoding solution in rails application
+gem 'geocoder'
+
+# Frontend JavaScript library used by Google Map Utilities
+gem 'underscore-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
