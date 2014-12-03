@@ -11,25 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203071638) do
+ActiveRecord::Schema.define(version: 20141203090419) do
 
   create_table "merchants", force: true do |t|
-    t.string   "category"
-    t.string   "name"
-    t.string   "location"
-    t.integer  "phone"
-    t.string   "website"
-    t.string   "email"
-    t.text     "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "places", force: true do |t|
     t.string   "name"
     t.string   "address"
     t.float    "lat"
     t.float    "lng"
+    t.string   "category"
+    t.string   "location"
+    t.integer  "phone"
+    t.string   "website"
+    t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

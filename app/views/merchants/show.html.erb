@@ -1,13 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @merchant.category %>
+  <strong>Name:</strong>
+  <%= @merchant.name %>
 </p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @merchant.name %>
+  <strong>Address:</strong>
+  <%= @merchant.address %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @merchant.lat %>
+</p>
+
+<p>
+  <strong>Lng:</strong>
+  <%= @merchant.lng %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @merchant.category %>
 </p>
 
 <p>
@@ -28,11 +43,6 @@
 <p>
   <strong>Email:</strong>
   <%= @merchant.email %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @merchant.address %>
 </p>
 
 <%= link_to 'Edit', edit_merchant_path(@merchant) %> |

@@ -1,1 +1,1 @@
-json.extract! @merchant, :id, :category, :name, :location, :phone, :website, :email, :address, :created_at, :updated_at
+json.extract! @merchant, :id, :name, :address, :lat, :lng, :category, :location, :phone, :website, :email, :created_at, :updated_at

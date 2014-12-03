@@ -21,6 +21,10 @@ class MerchantsController < ApplicationController
   def edit
   end
 
+  # GET /map
+  def map
+  end
+
   # POST /merchants
   # POST /merchants.json
   def create
@@ -69,6 +73,6 @@ class MerchantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def merchant_params
-      params.require(:merchant).permit(:category, :name, :location, :phone, :website, :email, :address)
+      params.require(:merchant).permit(:name, :address, :lat, :lng, :category, :location, :phone, :website, :email)
     end
 end
