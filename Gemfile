@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Show Google Maps in rails application
 gem 'gmaps4rails'
+gem 'nokogiri'
 
 # Geocoding solution in rails application
 gem 'geocoder'
