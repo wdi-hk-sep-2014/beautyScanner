@@ -7,6 +7,10 @@ class MerchantsController < ApplicationController
     @merchants = Merchant.all
   end
 
+  def search
+    @merchants = Merchant.search params[:search]
+  end
+
   # GET /merchants/1
   # GET /merchants/1.json
   def show

@@ -10,7 +10,6 @@ task :fetch_infos => :environment do
     phone = merchant.at_css(".blacklink").text
     if merchant.at_css("div > .bluelink.overunder") != nil
       website = merchant.at_css("div > .bluelink.overunder").text 
-    else
     end 
 
     puts "#{name} - #{address} - #{phone} - #{website}"
