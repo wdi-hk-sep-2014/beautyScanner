@@ -2,10 +2,9 @@
   <tbody>
     <% @merchants.each do |m| %>
       <tr>
-        <td><%= m.name %>
+        <td><a href="/merchants/<%= m.id %>"><%= m.name %>
         <br><%= m.address %></td>
-        <td><br><%= "*****" %></td>
-        <td><%= link_to 'Show', m %></td>
+        <td><a href="/merchants/<%= m.id %>"><br><%= "*****" %></td>
       </tr>
     <% end %>
   </tbody>
