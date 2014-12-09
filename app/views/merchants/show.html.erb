@@ -1,39 +1,26 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Back', merchants_path %>
+
 <p>
-  <strong>Name:</strong>
   <%= @merchant.name %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+Reviews: *****
+</p>
+
+<p>
+  <strong><span class="glyphicon glyphicon-map-marker"></span></strong>
   <%= @merchant.address %>
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @merchant.category %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @merchant.location %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
+  <strong><span class="glyphicon glyphicon-earphone"></strong>
   <%= @merchant.phone %>
 </p>
 
 <p>
-  <strong>Website:</strong>
+  <strong><span class="glyphicon glyphicon-globe"></strong></strong>
   <%= @merchant.website %>
 </p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @merchant.email %>
-</p>
-
-<%= link_to 'Edit', edit_merchant_path(@merchant) %> |
-<%= link_to 'Back', merchants_path %>
