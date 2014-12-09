@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'map' => 'merchants#map'
 
+  get 'search' => 'merchants#search'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

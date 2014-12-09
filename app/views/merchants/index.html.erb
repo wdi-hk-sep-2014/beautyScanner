@@ -2,6 +2,13 @@
 
   <div id="map"></div>
 
+<%= form_tag merchants_path, :method => 'get' do %>
+  <p>
+    <%= select_tag "search", options_for_select([ "Beauty Salon", "Massage", "Hair Salon" ], params[:search]) %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
 <table>
   <thead>
     <tr>
