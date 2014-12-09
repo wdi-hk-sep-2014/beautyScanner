@@ -1,26 +1,32 @@
+<div class="col-md-6 navbar navbar-default"><%= link_to 'Back', merchants_path %>
+</div>
+<div class="col-md-6 navbar navbar-default"><%= link_to 'See on the map', map_path %>
+</div>
+
+<br>
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back', merchants_path %>
+<div class="col-md-12 navbar navbar-default">  
+  <p>
+    <%= @merchant.name %>
+  </p>
 
-<p>
-  <%= @merchant.name %>
-</p>
+  <p>
+  Reviews: *****
+  </p>
 
-<p>
-Reviews: *****
-</p>
+  <p>
+    <strong><span class="glyphicon glyphicon-map-marker"></span></strong>
+    <%= @merchant.address %>
+  </p>
 
-<p>
-  <strong><span class="glyphicon glyphicon-map-marker"></span></strong>
-  <%= @merchant.address %>
-</p>
+  <p>
+    <strong><span class="glyphicon glyphicon-earphone"></strong>
+    <%= @merchant.phone %>
+  </p>
 
-<p>
-  <strong><span class="glyphicon glyphicon-earphone"></strong>
-  <%= @merchant.phone %>
-</p>
-
-<p>
-  <strong><span class="glyphicon glyphicon-globe"></strong></strong>
-  <%= @merchant.website %>
-</p>
+  <p>
+    <strong><span class="glyphicon glyphicon-globe"></strong></strong>
+    <%= @merchant.website %>
+  </p>
+</div>
