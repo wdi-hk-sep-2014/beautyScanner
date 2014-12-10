@@ -30,7 +30,13 @@
     handler.fitMapToBounds()
 
 $ ->
-  $.ajax
-    url: '/merchants.json'
-  .done (data) ->
-    convert data
+  $('#category').change ->
+    $('form').submit()
+
+
+  # We will add this back once we have maps again....
+  #
+  # $.ajax
+  #   url: '/merchants.json'
+  # .done (data) ->
+  #   convert data
