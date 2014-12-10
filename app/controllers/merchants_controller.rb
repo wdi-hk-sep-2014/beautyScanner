@@ -1,6 +1,13 @@
 class MerchantsController < ApplicationController
   before_action :set_merchant, only: [:show, :edit, :update, :destroy]
 
+  # GET /search
+  def search
+    @merchants = Category.find(params[:category]).merchants
+    @categories = Category.all
+    render 'search_results'
+  end
+
   # GET /merchants
   # GET /merchants.json
   def index

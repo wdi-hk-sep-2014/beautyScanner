@@ -5,7 +5,6 @@ class CreateMerchants < ActiveRecord::Migration
       t.string :address
       t.float :lat
       t.float :lng
-      t.string :category
       t.string :location
       t.string :phone
       t.string :website
