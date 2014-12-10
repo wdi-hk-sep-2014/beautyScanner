@@ -4,6 +4,7 @@ class MerchantsController < ApplicationController
   # GET /search
   def search
     @merchants = Category.find(params[:category]).merchants
+    @categories = Category.all
     render 'search_results'
   end
 

@@ -7,4 +7,7 @@ class Merchant < ActiveRecord::Base
   geocoded_by :address, :latitude  => :lat, :longitude => :lng   # can also be an IP address
   after_validation :geocode          # auto-fetch coordinates
 
+  def reviews_score
+    "*" * [*1..5].sample
+  end
 end
