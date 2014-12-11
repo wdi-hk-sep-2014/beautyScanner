@@ -1,7 +1,6 @@
 <div class="col-md-6 navbar navbar-default">
   <%= form_tag("/search", method: "get") do %>
-    <%= label_tag(:category, "Search for:") %>
-    <%= select_tag 'category', options_from_collection_for_select(@categories, 'id', 'name') %>
+    <%= select_tag 'category', options_from_collection_for_select(@categories, 'id', 'name', @selected_category_id), class: 'search' %>
   <% end %>
 </div>
 
