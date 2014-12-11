@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :merchants
+  resources :merchants do
+    get 'map', on: :member
+  end
+
+  resources :categories, :only => [:map, :show] do
+    get 'map', on: :member
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -7,9 +13,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   get 'search' => 'merchants#search'
-  get 'map' => 'merchants#map'
+  # get 'map/:id' => 'merchants#map'
 
-  get 'search' => 'merchants#search'
+  # get 'search' => 'merchants#search'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
