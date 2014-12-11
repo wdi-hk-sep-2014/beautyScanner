@@ -1,0 +1,23 @@
+<div class="col-md-6 navbar navbar-default">
+  <%= form_tag("/search", method: "get") do %>
+    <%= select_tag 'category', options_from_collection_for_select(@categories, 'id', 'name', @selected_category_id), class: 'search' %>
+  <% end %>
+</div>
+
+<div class="col-md-6 navbar navbar-default"><%= link_to 'Location', map_path %>
+</div>
+
+<table class="table table-hover">
+  <tbody>
+    <% @merchants.each do |m| %>
+      <tr>
+        <td><a href="/merchants/<%= m.id %>"><%= m.name %>
+        <br><%= m.address %></td>
+        <td><a href="/merchants/<%= m.id %>"><br><%= m.reviews_score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="col-md-12 navbar navbar-default">
+  <a href="/map">See on the map</a>
+</div>

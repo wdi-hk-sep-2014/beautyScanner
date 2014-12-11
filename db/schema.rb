@@ -11,20 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204100749) do
+ActiveRecord::Schema.define(version: 20141209043013) do
+
+  create_table "categories", force: true do |t|
+    t.string "name"
+  end
 
   create_table "merchants", force: true do |t|
     t.string   "name"
     t.string   "address"
     t.float    "lat"
     t.float    "lng"
-    t.string   "category"
     t.string   "location"
     t.string   "phone"
     t.string   "website"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
   end
+
+  add_index "merchants", ["category_id"], name: "index_merchants_on_category_id"
 
 end

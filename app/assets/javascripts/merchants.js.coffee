@@ -29,8 +29,13 @@
     handler.bounds.extendWith markers
     handler.fitMapToBounds()
 
+$.ajax
+  url: '/merchants.json'
+.done (data) ->
+  convert data
+
 $ ->
-  $.ajax
-    url: '/merchants.json'
-  .done (data) ->
-    convert data
+  $('#category.search').change ->
+    $('form').submit()
+
+

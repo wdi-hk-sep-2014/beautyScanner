@@ -1,39 +1,32 @@
+<div class="col-md-6 navbar navbar-default"><%= link_to 'Back', search_path %>
+</div>
+<div class="col-md-6 navbar navbar-default"><%= link_to 'See on the map', map_path %>
+</div>
+
+<br>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @merchant.name %>
-</p>
+<div class="col-md-12 navbar navbar-default">  
+  <p>
+    <%= @merchant.name %>
+  </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @merchant.address %>
-</p>
+  <p>
+  Reviews: <%= @merchant.reviews_score %>
+  </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @merchant.category %>
-</p>
+  <p>
+    <strong><span class="glyphicon glyphicon-map-marker"></span></strong>
+    <%= @merchant.address %>
+  </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @merchant.location %>
-</p>
+  <p>
+    <strong><span class="glyphicon glyphicon-earphone"></strong>
+    <%= @merchant.phone %>
+  </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @merchant.phone %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @merchant.website %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @merchant.email %>
-</p>
-
-<%= link_to 'Edit', edit_merchant_path(@merchant) %> |
-<%= link_to 'Back', merchants_path %>
+  <p>
+    <strong><span class="glyphicon glyphicon-globe"></strong></strong>
+    <%= @merchant.website %>
+  </p>
+</div>
