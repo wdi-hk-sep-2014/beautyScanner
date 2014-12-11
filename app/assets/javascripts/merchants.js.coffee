@@ -29,12 +29,22 @@
     handler.bounds.extendWith markers
     handler.fitMapToBounds()
 
-$.ajax
-  url: '/merchants.json'
-.done (data) ->
-  convert data
-
 $ ->
+  
+  if $('.map-merchant').length > 0
+    id = $('#map').data('hidden')
+    $.ajax
+      url: '/merchants/' + id + '.json'
+    .done (data) ->
+      convert [data]
+
+  if $('.map-category').length > 0
+    id = $('#map').data('hidden')
+    $.ajax
+      url: '/categories/' + id + '.json'
+    .done (data) ->
+      convert data
+
   $('#category.search').change ->
     $('form').submit()
 
