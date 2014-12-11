@@ -1,5 +1,5 @@
 class MerchantsController < ApplicationController
-  before_action :set_merchant, only: [:show, :edit, :update, :destroy]
+  before_action :set_merchant, only: [:show, :edit, :update, :destroy, :map]
 
   # GET /search
   def search
