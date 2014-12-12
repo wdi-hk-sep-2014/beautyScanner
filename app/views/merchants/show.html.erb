@@ -1,10 +1,9 @@
-<div class="col-md-6 navbar navbar-default"><%= link_to 'Back', search_path %>
-</div>
-<div class="col-md-6 navbar navbar-default showone" data-hidden="<%= @merchant.id %>">
-  <%= link_to 'See on the map', map_merchant_path %>
+<div class="col-md-12 navbar-default showone" data-hidden="<%= @merchant.id %>">
+  <button type="button" class="btn btn-default btn-lg btn-block">
+    <%= link_to 'See on the map', map_merchant_path %>
+  </button>
 </div>
 
-<br>
 <p id="notice"><%= notice %></p>
 
 <div class="col-md-12 navbar navbar-default">  
@@ -16,18 +15,27 @@
   Reviews: <%= @merchant.reviews_score %>
   </p>
 
-  <p>
-    <strong><span class="glyphicon glyphicon-map-marker"></span></strong>
-    <%= @merchant.address %>
-  </p>
+  
 
-  <p>
-    <strong><span class="glyphicon glyphicon-earphone"></strong>
-    <%= @merchant.phone %>
-  </p>
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label class="col-xs-2 control-label"><span class="glyphicon glyphicon-map-marker"></span></label>
+      <div class="col-sm-5">
+        <p class="form-control-static"><%= @merchant.address %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-2 control-label"><span class="glyphicon glyphicon-earphone"></span></label>
+      <div class="col-sm-5">
+        <p class="form-control-static"><%= @merchant.phone %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-2 control-label"><span class="glyphicon glyphicon-globe"></span></label>
+      <div class="col-sm-5">
+        <p class="form-control-static"><%= @merchant.website %></p>
+      </div>
+    </div>
+  </form>
 
-  <p>
-    <strong><span class="glyphicon glyphicon-globe"></strong></strong>
-    <%= @merchant.website %>
-  </p>
 </div>

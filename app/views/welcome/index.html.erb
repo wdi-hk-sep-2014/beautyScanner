@@ -1,5 +1,8 @@
-<%= form_tag("/search", method: "get") do %>
-  <%= select_tag 'category', options_from_collection_for_select(@categories, 'id', 'name') %>
-  <%= submit_tag("Search") %>
+<%= form_tag("/search", method: "get", class: 'home') do %>
+  <%= select_tag 'category', options_from_collection_for_select(@categories, 'id', 'name'), class: 'col-md-12 navbar-default' %>
+  <br>
+  <br>
+  <br>
+  <%= submit_tag("Find", class: 'col-md-6 navbar-default') %>
 <% end %>
 
