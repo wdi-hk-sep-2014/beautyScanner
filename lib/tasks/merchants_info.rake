@@ -2,17 +2,13 @@ desc "Fetch merchant infos"
 task :fetch_infos => :environment do
   require 'open-uri'
   
-  list = [ {url: "Beauty-Health/Beauty-Salons/p1/en/", name: Category.create(name: 'Beauty Salon')},
-           {url: "Personal-Services/Massage/p1/en/",   name: Category.create(name: 'Massage')}]
-  
-  list.each do |category| 
-    fetch_merchants(category[:url], category[:name]) 
-  end  
+  list = {url: "/Medical-Beauty-Health-Care-Services-b/Personal-Services/Massage/p1/en/", name: Category.create(name: 'Massage')}
+    fetch_merchants(list[:url], list[:name])  
 end
 
 def fetch_merchants(nextUrl, category)
 
-  prefix = "http://www.yp.com.hk/Medical-Beauty-Health-Care-Services-b/"
+  prefix = "http://www.yp.com.hk"
   nextLinkText = "Next"
 
   while (!nextUrl.empty?)
@@ -20,8 +16,7 @@ def fetch_merchants(nextUrl, category)
     doc.css(".listing_div").each do |m|
      extract_merchant(m, category)
     end
-    nextUrl = doc.xpath("//a[text()='#{nextLinkText}']/@href").first.to_s
-    pause 1    
+    nextUrl = doc.xpath("//a[text()='#{nextLinkText}']/@href").first.to_s  
   end
 
 end
@@ -35,7 +30,7 @@ def extract_merchant(merchant, category)
   m.category = category
   m.save
 
-  puts "[MerchantSaved][#{}] #{m.name} - #{m.address} - #{m.phone} - #{m.website}"  
+  puts "[MerchantSaved] #{m.name}"  
 end
 
 def extract_css(merchant, cssClass)

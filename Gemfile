@@ -43,6 +43,9 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'  # adding REPL
 
+  #create seeds data from existing data
+  gem 'seed_dump'
+
   # RailsPanel is a Chrome extension for Rails development that will end your tailing of development.log
   # Have all information about your Rails app requests right there in the Developer Tools panel.
   # Provides insight to db/rendering/total times, parameter list, rendered views, text editor integration and more.
