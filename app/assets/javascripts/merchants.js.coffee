@@ -47,5 +47,7 @@ $ ->
 
   $('#category.search').change ->
     $('form').submit()
-
+  
+  $('#location.search').change ->
+    $('form').submit()
 
