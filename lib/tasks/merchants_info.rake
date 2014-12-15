@@ -2,7 +2,7 @@ desc "Fetch merchant infos"
 task :fetch_infos => :environment do
   require 'open-uri'
   
-  list = {url: "/Medical-Beauty-Health-Care-Services-b/Beauty-Health/Beauty-Salons/p1/en/", name: Category.create(name: 'Beauty Salon')}
+  list = {url: "/Medical-Beauty-Health-Care-Services-b/Personal-Services/Massage/p1/en/", name: Category.create(name: 'Massage')}
     fetch_merchants(list[:url], list[:name])  
 end
 

@@ -21,6 +21,9 @@ gem 'nokogiri'
 # Geocoding solution in rails application
 gem 'geocoder'
 
+#create seeds data from existing data
+gem 'seed_dump'
+
 # Frontend JavaScript library used by Google Map Utilities
 gem 'underscore-rails'
 
