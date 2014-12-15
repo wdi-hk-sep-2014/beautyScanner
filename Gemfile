@@ -21,9 +21,6 @@ gem 'nokogiri'
 # Geocoding solution in rails application
 gem 'geocoder'
 
-#create seeds data from existing data
-gem 'seed_dump'
-
 # Frontend JavaScript library used by Google Map Utilities
 gem 'underscore-rails'
 
@@ -45,6 +42,9 @@ group :development do
   #> https://github.com/charliesome/better_errors
   gem 'better_errors'
   gem 'binding_of_caller'  # adding REPL
+
+  #create seeds data from existing data
+  gem 'seed_dump'
 
   # RailsPanel is a Chrome extension for Rails development that will end your tailing of development.log
   # Have all information about your Rails app requests right there in the Developer Tools panel.
