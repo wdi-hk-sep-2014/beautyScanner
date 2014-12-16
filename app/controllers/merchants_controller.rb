@@ -4,8 +4,10 @@ class MerchantsController < ApplicationController
   # GET /search
   def search
     @selected_category_id = params[:category]
-    @merchants = Category.find(params[:category]).merchants
+    @selected_location_id = params[:location]
+    @merchants = Merchant.where(category_id: params[:category], location_id: params[:location])
     @categories = Category.all
+    @locations = Location.all
     render 'search_results'
   end
 
