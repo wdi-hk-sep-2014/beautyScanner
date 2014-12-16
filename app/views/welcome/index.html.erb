@@ -1,11 +1,11 @@
-<%= form_tag("/search", method: "get", class: 'home') do %>
-  
-  <%= select_tag 'category', options_from_collection_for_select(@categories, 'id', 'name'), class: 'col-md-12 navbar-default' %>
-  <br>
-  <br>
-  <%= select_tag 'location', options_from_collection_for_select(@locations, 'id', 'name'), class: 'col-md-12 navbar-default' %>
-  <br>
-  <br>
-  <%= submit_tag("Find", class: 'col-md-6 navbar-default') %>
-<% end %>
-
+<div>
+  <%= form_tag("/search", method: "get", class: 'home') do %>
+    <%= select_tag 'category', options_from_collection_for_select(@categories, 'id', 'name'), class: 'col-md-12 navbar-default myButton' %>
+    <br>
+    <br>
+    <%= select_tag 'location', options_from_collection_for_select(@locations, 'id', 'name'), class: 'col-md-12 navbar-default myButton' %>
+    <br>
+    <br>
+    <%= submit_tag("Find", class: 'col-md-12 navbar-default myButton') %>
+  <% end %>
+<div>
