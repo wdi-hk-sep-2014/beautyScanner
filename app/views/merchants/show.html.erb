@@ -1,21 +1,20 @@
 <div class="col-md-12 navbar-default showone" data-hidden="<%= @merchant.id %>">
   <button type="button" class="btn btn-default btn-lg btn-block myButton">
-    <%= link_to 'See on the map', map_merchant_path %>
+    <%= link_to 'Show map', map_merchant_path %>
   </button>
 </div>
 
 <p id="notice"><%= notice %></p>
 
 <div class="col-md-12 navbar navbar-default">  
-  <p>
+ 
+  <p><h4>
     <%= @merchant.name %>
-  </p>
+  </h4></p>
 
   <p>
   Reviews: <%= @merchant.reviews_score %>
   </p>
-
-  
 
   <form class="form-horizontal" role="form">
     <div class="form-group">

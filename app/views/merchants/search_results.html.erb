@@ -13,7 +13,7 @@
 <table class="table table-hover">
   <tbody>
     <% @merchants.each do |m| %>
-      <tr>
+      <tr class="<%= cycle('oddrow', 'evenrow') -%>">
         <td><a href="/merchants/<%= m.id %>"><%= m.name %>
         <br><span class="glyphicon glyphicon-map-marker"></span><%= m.address %></td>
         <td><a href="/merchants/<%= m.id %>"><br><%= m.reviews_score %></td>

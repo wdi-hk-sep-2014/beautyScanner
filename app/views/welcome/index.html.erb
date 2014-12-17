@@ -1,15 +1,12 @@
+<%= form_tag("/search", method: "get") do %>
   <div class="homepage">
-  <%= form_tag("/search", method: "get", class: 'home') do %>
-    <br>
-    <br>
-     <%= select_tag 'category', options_from_collection_for_select(@categories, 'id', 'name'), class: 'col-md-12 navbar-default myButton' %>
-    <br>
-    <br>
-    <br>
-    <%= select_tag 'location', options_from_collection_for_select(@locations, 'id', 'name'), class: 'col-md-12 navbar-default myButton' %>
-    <br>
-   
+    <div class="homepage_buttons">
+      <%= select_tag 'category', options_from_collection_for_select(@categories, 'id', 'name'), class: 'myButton' %>
+    </div>
+    <div class="homepage_buttons">
+      <%= select_tag 'location', options_from_collection_for_select(@locations, 'id', 'name'), class: 'myButton' %>
+    </div>
   </div>
-    <br>
-    <%= submit_tag("Find", class: 'col-md-12 navbar-default myButton home') %>
-  <% end %>
+
+  <div id="findButton"><%= submit_tag("Find", class: 'myButton') %></div>
+<% end %>

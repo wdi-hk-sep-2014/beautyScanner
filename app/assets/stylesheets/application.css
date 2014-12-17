@@ -19,9 +19,22 @@
   src: url('gitchgitch.ttf') format('truetype');
 }
 
+table tr.oddrow {
+    background-color: #F5FAFA;
+}
+
+table tr.evenrow {
+    background-color: #FFFFFF;
+}
+
 #map {
-  width: 800px;
+  width: 368px;
   height: 400px;
+}
+
+.glyphicon {
+  margin-left: 0;
+  margin-right: 60px;
 }
 
 .navbar {
@@ -29,7 +42,7 @@
 }
 
 .homepage{
-  background: url(orange_flower.jpg) no-repeat center center fixed;
+  background: url(orange_flower.jpg) no-repeat bottom center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -38,11 +51,21 @@
   padding-bottom: 100px;
 }
 
+.homepage_buttons {
+  text-align: center;
+  padding-top: 50px;
+}
+
+#findButton {
+  text-align: center; 
+  margin-top: 20px;
+}
+
 .navbar-brand {
   width:100%;
   text-align: center;
   font-family: "gitchgitch";
-  font-size: 22px
+  font-size: 24px
   }
 
 .navbar-default {
