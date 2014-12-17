@@ -10,31 +10,70 @@
     <%= @merchant.name %>
   </h4></p>
 
-  <p>
-  Reviews: <%= @average %>
-  </p>
-  Your Review: <div id="star"><%= @rating.first.score if @rating && @rating.first %></div>
-  <%= link_to 'see reviews', reviews_merchant_path(@merchant) %>
+  <% if @average==5 %>
+    <p><%= link_to 'Reviews: ', reviews_merchant_path(@merchant) %>
+
+      <span class="glyphicon glyphicon-star"
+      ></span>
+      <span class="glyphicon glyphicon-star"></span>
+      <span class="glyphicon glyphicon-star"></span>
+      <span class="glyphicon glyphicon-star"></span>
+      <span class="glyphicon glyphicon-star"></span>
+    </p>
+  <% elsif @average==4 %>
+    <p><%= link_to 'Reviews: ', reviews_merchant_path(@merchant) %>
+      <span class="glyphicon glyphicon-star"
+      ></span>
+      <span class="glyphicon glyphicon-star"></span>
+      <span class="glyphicon glyphicon-star"></span>
+      <span class="glyphicon glyphicon-star"></span>
+      <span class="glyphicon glyphicon-star-empty"></span>
+    </p>
+  <% elsif @average==3 %>
+    <p><%= link_to 'Reviews: ', reviews_merchant_path(@merchant) %>
+      <span class="glyphicon glyphicon-star"
+      ><span class="glyphicon glyphicon-star"><span class="glyphicon glyphicon-star"><span class="glyphicon glyphicon-star-empty"><span class="glyphicon glyphicon-star-empty">
+    </p>
+  <% elsif @average==2 %>
+    <p><%= link_to 'Reviews: ', reviews_merchant_path(@merchant) %>
+      <span class="glyphicon glyphicon-star"><span class="glyphicon glyphicon-star"><span class="glyphicon glyphicon-star-empty"><span class="glyphicon glyphicon-star-empty"><span class="glyphicon glyphicon-star-empty">
+    </p>
+  <% elsif @average==1 %>
+    <p><%= link_to 'Reviews: ', reviews_merchant_path(@merchant) %>
+      <span class="glyphicon glyphicon-star"><span class="glyphicon glyphicon-star-empty"><span class="glyphicon glyphicon-star-empty"><span class="glyphicon glyphicon-star-empty"><span class="glyphicon glyphicon-star-empty">
+    </p>
+  <% else %>
+  <% end %>
 
   <form class="form-horizontal" role="form">
-    <div class="form-group">
-      <label class="col-xs-2 control-label"><span class="glyphicon glyphicon-map-marker"></span></label>
-      <div class="col-sm-5">
-        <p class="form-control-static"><%= @merchant.address %></p>
+    <% if @merchant.address? %>
+      <div class="form-group">
+        <label class="col-xs-2 control-label">
+        <span class="glyphicon glyphicon-map-marker"></span></label>
+        <div class="col-sm-5">
+          <p class="form-control-static"><%= @merchant.address %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-xs-2 control-label"><span class="glyphicon glyphicon-earphone"></span></label>
-      <div class="col-sm-5">
-        <p class="form-control-static"><%= @merchant.phone %></p>
+    <% else %>
+    <% end %>
+    <% if @merchant.phone? %>
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><span class="glyphicon glyphicon-earphone"></span></label>
+        <div class="col-sm-5">
+          <p class="form-control-static"><%= @merchant.phone %></p>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="col-xs-2 control-label"><span class="glyphicon glyphicon-globe"></span></label>
-      <div class="col-sm-5">
-        <p class="form-control-static"><%= @merchant.website %></p>
+    <% else %>
+    <% end %>
+    <% if @merchant.website? %>
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><span class="glyphicon glyphicon-globe"></span></label>
+        <div class="col-sm-5">
+          <p class="form-control-static"><%= @merchant.website %></p>
+        </div>
       </div>
-    </div>
+    <% else %>
+    <% end %>
   </form>
 
 </div>
