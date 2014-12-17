@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :merchants do
     get 'map', on: :member
   end

@@ -21,6 +21,9 @@ gem 'nokogiri'
 # Geocoding solution in rails application
 gem 'geocoder'
 
+#adding user and login
+gem 'devise'
+
 # Frontend JavaScript library used by Google Map Utilities
 gem 'underscore-rails'
 
