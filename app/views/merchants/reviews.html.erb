@@ -1,0 +1,6 @@
+<h1> Your reviews</h1>
+<% @reviews.each do |review| %>
+  <div><%= review.score %></div>
+<% end %>
+
+<%= render 'form_reviews' %>
