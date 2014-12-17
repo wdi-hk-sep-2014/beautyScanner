@@ -5,7 +5,7 @@ class MerchantsController < ApplicationController
   def search
     @selected_category_id = params[:category]
     @selected_location_id = params[:location]
-    @merchants = Merchant.where(category_id: params[:category], location_id: params[:location])
+    @merchants = Merchant.where(category_id: params[:category], location_id: params[:location]).take(8).each
     @categories = Category.all
     @locations = Location.all
     render 'search_results'
