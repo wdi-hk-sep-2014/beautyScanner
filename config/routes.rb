@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :merchants do
     get 'map', on: :member
+    get 'reviews', on: :member
+    put 'update_review', on: :member
   end
 
   resources :categories, :only => [:map, :show] do
