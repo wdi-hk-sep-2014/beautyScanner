@@ -2,6 +2,7 @@ class Merchant < ActiveRecord::Base
 
   belongs_to :category
   belongs_to :location
+  has_many :ratings
 
   reverse_geocoded_by :lat, :lng
   after_validation :reverse_geocode  # auto-fetch address
