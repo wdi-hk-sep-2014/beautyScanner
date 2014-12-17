@@ -11,8 +11,10 @@
   </h4></p>
 
   <p>
-  Reviews: <%= @merchant.reviews_score %>
+  Reviews: <%= @average %>
   </p>
+  Your Review: <div id="star"><%= @rating.first.score if @rating && @rating.first %></div>
+  <%= link_to 'see reviews', reviews_merchant_path(@merchant) %>
 
   <form class="form-horizontal" role="form">
     <div class="form-group">
