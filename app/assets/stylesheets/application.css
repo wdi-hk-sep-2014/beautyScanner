@@ -38,6 +38,10 @@ table tr.evenrow {
   float: left;
 }
 
+.container-fluid {
+  padding-right: -5px;
+}
+
 .glyphicon-star {
   float: inherit;
 }

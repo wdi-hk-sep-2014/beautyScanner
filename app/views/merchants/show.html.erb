@@ -5,45 +5,25 @@
 </div>
 
 <div class="col-md-12 navbar navbar-default">  
- 
   <p><h4>
     <%= @merchant.name %>
   </h4></p>
 
-  <% if @average==5 %>
-    <p><%= link_to 'Reviews: ', reviews_merchant_path(@merchant) %>
+    <p>
+      <%= link_to 'Reviews: ', reviews_merchant_path(@merchant) %>
+      <% if @average == nil%>
+        <i>No reviews yet</i>
+      <% else %>
+        <% @average.to_i.times do %>
+        <span class="glyphicon glyphicon-star"
+        ></span>
+        <% end %>
 
-      <span class="glyphicon glyphicon-star"
-      ></span>
-      <span class="glyphicon glyphicon-star"></span>
-      <span class="glyphicon glyphicon-star"></span>
-      <span class="glyphicon glyphicon-star"></span>
-      <span class="glyphicon glyphicon-star"></span>
+        <% (5-@average).to_i.times do %>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <% end %>
+      <% end %>
     </p>
-  <% elsif @average==4 %>
-    <p><%= link_to 'Reviews: ', reviews_merchant_path(@merchant) %>
-      <span class="glyphicon glyphicon-star"
-      ></span>
-      <span class="glyphicon glyphicon-star"></span>
-      <span class="glyphicon glyphicon-star"></span>
-      <span class="glyphicon glyphicon-star"></span>
-      <span class="glyphicon glyphicon-star-empty"></span>
-    </p>
-  <% elsif @average==3 %>
-    <p><%= link_to 'Reviews: ', reviews_merchant_path(@merchant) %>
-      <span class="glyphicon glyphicon-star"
-      ><span class="glyphicon glyphicon-star"><span class="glyphicon glyphicon-star"><span class="glyphicon glyphicon-star-empty"><span class="glyphicon glyphicon-star-empty">
-    </p>
-  <% elsif @average==2 %>
-    <p><%= link_to 'Reviews: ', reviews_merchant_path(@merchant) %>
-      <span class="glyphicon glyphicon-star"><span class="glyphicon glyphicon-star"><span class="glyphicon glyphicon-star-empty"><span class="glyphicon glyphicon-star-empty"><span class="glyphicon glyphicon-star-empty">
-    </p>
-  <% elsif @average==1 %>
-    <p><%= link_to 'Reviews: ', reviews_merchant_path(@merchant) %>
-      <span class="glyphicon glyphicon-star"><span class="glyphicon glyphicon-star-empty"><span class="glyphicon glyphicon-star-empty"><span class="glyphicon glyphicon-star-empty"><span class="glyphicon glyphicon-star-empty">
-    </p>
-  <% else %>
-  <% end %>
 
   <form class="form-horizontal" role="form">
     <% if @merchant.address? %>
