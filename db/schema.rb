@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217075235) do
+ActiveRecord::Schema.define(version: 20141218032006) do
 
   create_table "categories", force: true do |t|
     t.string "name"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20141217075235) do
     t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "comment"
   end
 
   add_index "ratings", ["merchant_id"], name: "index_ratings_on_merchant_id"

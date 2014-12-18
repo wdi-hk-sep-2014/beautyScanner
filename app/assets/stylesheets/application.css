@@ -32,6 +32,17 @@ table tr.evenrow {
   height: 400px;
 }
 
+.ratings {
+  max-height: 40px;
+  max-width: 80px;
+  min-width: 30px !important;
+}
+
+.review {
+  display: inline-block;
+  width: 60%;
+}
+
 .glyphicon-home {
   margin-left: 0;
   margin-right: 10px;

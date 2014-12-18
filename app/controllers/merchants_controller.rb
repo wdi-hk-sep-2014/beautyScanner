@@ -83,7 +83,7 @@ class MerchantsController < ApplicationController
   end
 
   def update_review
-    Rating.create(user: current_user, merchant: @merchant, score: params[:score])
+    Rating.create(user: current_user, merchant: @merchant, score: params[:score], comment: params[:comment])
     redirect_to reviews_merchant_path(@merchant)
   end
 

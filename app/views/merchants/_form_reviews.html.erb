@@ -1,6 +1,9 @@
 <%= form_tag(update_review_merchant_path, method: "put") do %>
-
-    <%= number_field_tag 'score', nil, in: 1..5 %>
-    <%= submit_tag "Enter review" %>
-
+  <div>
+    <%= number_field_tag 'score', nil, in: 1..5, class: 'myButton ratings' %>
+    <%= text_field_tag 'comment', value ="Enter your review here...", class: 'form-control review'%>
+    <br>
+    <br>
+    <%= submit_tag "Submit", class: 'myButton' %>
+  </div>
 <% end %>
