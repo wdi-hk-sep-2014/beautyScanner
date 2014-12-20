@@ -1,6 +1,3 @@
-User.create!([
-  {email: "sgomezdekset@hotmail.com", encrypted_password: "$2a$10$gWNYNY0mFaxhCHXbVaLw7uu42N6ukPwuEbmZIBLkTFSffNa0qZROC", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: "2014-12-18 07:34:20", last_sign_in_at: "2014-12-18 06:46:05", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"},
-  {email: "test_user@mail.com", encrypted_password: "$2a$10$4jYWu6IIulgU1tO4H7kw4uG7o93xGqtp3amNokWu/B3lsqW0E2Ka.", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2014-12-18 05:24:44", last_sign_in_at: "2014-12-18 05:24:44", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
 ])
 Category.create!([
   {name: "Beauty Salon"},
