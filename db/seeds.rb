@@ -1,4 +1,3 @@
-])
 Category.create!([
   {name: "Beauty Salon"},
   {name: "Hair Salon"},
