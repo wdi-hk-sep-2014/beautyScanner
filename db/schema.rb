@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141218032006) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: true do |t|
     t.string "name"
   end
@@ -37,8 +40,8 @@ ActiveRecord::Schema.define(version: 20141218032006) do
     t.integer  "location_id"
   end
 
-  add_index "merchants", ["category_id"], name: "index_merchants_on_category_id"
-  add_index "merchants", ["location_id"], name: "index_merchants_on_location_id"
+  add_index "merchants", ["category_id"], name: "index_merchants_on_category_id", using: :btree
+  add_index "merchants", ["location_id"], name: "index_merchants_on_location_id", using: :btree
 
   create_table "ratings", force: true do |t|
     t.integer  "merchant_id"
@@ -49,8 +52,8 @@ ActiveRecord::Schema.define(version: 20141218032006) do
     t.string   "comment"
   end
 
-  add_index "ratings", ["merchant_id"], name: "index_ratings_on_merchant_id"
-  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
+  add_index "ratings", ["merchant_id"], name: "index_ratings_on_merchant_id", using: :btree
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -67,7 +70,7 @@ ActiveRecord::Schema.define(version: 20141218032006) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
