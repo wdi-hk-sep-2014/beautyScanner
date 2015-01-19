@@ -51,3 +51,4 @@ $ ->
   $('#location.search').change ->
     $('form').submit()
 
+

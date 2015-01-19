@@ -78,9 +78,18 @@ $(function() {
 });
 
 
-$('#add').click(function() {
-    alert( "Hello" );
-});
+$('#add').click(function addCalanderEvent(id, start, end, title, colour)
+{
+    var eventObject = {
+    title: title,
+    start: start,
+    end: end,
+    id: id,
+    color: colour
+    };
+
+    $('#calendar').fullCalendar('renderEvent', eventObject, true);
+    return eventObject; }
 
 
 
@@ -88,3 +97,6 @@ $('#add').click(function() {
 
 
 
+
+
+    
