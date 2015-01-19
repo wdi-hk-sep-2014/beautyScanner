@@ -1,11 +1,11 @@
 class MerchantsController < ApplicationController
-  before_action :set_merchant, only: [:show, :edit, :update, :destroy, :map]
+  before_action :set_merchant, only: [:show, :edit, :update, :destroy, :map, :reviews, :update_review]
 
   # GET /search
   def search
     @selected_category_id = params[:category]
     @selected_location_id = params[:location]
-    @merchants = Merchant.where(category_id: params[:category], location_id: params[:location])
+    @merchants = Merchant.where(category_id: params[:category], location_id: params[:location]).take(8).each
     @categories = Category.all
     @locations = Location.all
     render 'search_results'
@@ -20,6 +20,8 @@ class MerchantsController < ApplicationController
   # GET /merchants/1
   # GET /merchants/1.json
   def show
+    @rating = Rating.where(merchant: @merchant, user: @current_user)
+    @average = Rating.where(merchant_id: @merchant.id).average(:score)
   end
 
   # GET /map
@@ -73,6 +75,16 @@ class MerchantsController < ApplicationController
       format.html { redirect_to merchants_url, notice: 'Merchant was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def reviews
+    @reviews = Rating.where(merchant_id: @merchant.id)
+    @review = Rating.new
+  end
+
+  def update_review
+    Rating.create(user: current_user, merchant: @merchant, score: params[:score], comment: params[:comment])
+    redirect_to reviews_merchant_path(@merchant)
   end
 
   private

@@ -1,1 +1,55 @@
 <div id="map" class="map-merchant" data-hidden="<%= @merchant.id %>"></div>
+
+<div class="col-md-12 navbar navbar-default">  
+  <p><h4>
+    <%= @merchant.name %>
+  </h4></p>
+
+    <p>
+      <%= link_to 'Reviews: ', reviews_merchant_path(@merchant) %>
+      <% if @average == nil%>
+        <i>No reviews yet</i>
+      <% else %>
+        <% @average.to_i.times do %>
+        <span class="glyphicon glyphicon-star"
+        ></span>
+        <% end %>
+
+        <% (5-@average).to_i.times do %>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <% end %>
+      <% end %>
+    </p>
+
+  <form class="form-horizontal" role="form">
+    <% if @merchant.address? %>
+      <div class="form-group">
+        <label class="col-xs-2 control-label">
+        <span class="glyphicon glyphicon-map-marker"></span></label>
+        <div class="col-sm-5">
+          <p class="form-control-static"><%= @merchant.address %></p>
+        </div>
+      </div>
+    <% else %>
+    <% end %>
+    <% if @merchant.phone? %>
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><span class="glyphicon glyphicon-earphone"></span></label>
+        <div class="col-sm-5">
+          <p class="form-control-static"><%= @merchant.phone %></p>
+        </div>
+      </div>
+    <% else %>
+    <% end %>
+    <% if @merchant.website? %>
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><span class="glyphicon glyphicon-globe"></span></label>
+        <div class="col-sm-5">
+          <p class="form-control-static"><%= @merchant.website %></p>
+        </div>
+      </div>
+    <% else %>
+    <% end %>
+  </form>
+
+</div>

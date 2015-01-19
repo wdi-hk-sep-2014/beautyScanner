@@ -1,0 +1,26 @@
+<h4><%= @merchant.name %> reviews:<h4>
+<table class="table table-hover">
+  <tbody>
+    <% @reviews.each do |review| %>
+      <tr class="<%= cycle('oddrow', 'evenrow') -%>">
+        <td>
+          <% if review.score != nil%>
+            <%= review.score.to_i.times do %>
+              <span class="glyphicon glyphicon-star"
+              ></span>
+            <% end %>
+            <% (5-review.score).to_i.times do %>
+              <span class="glyphicon glyphicon-star-empty"></span>
+            <% end %>
+          <% else %>
+          <% end %>
+        </td>
+        <td><%= review.comment %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= render 'form_reviews' %>
+<br>
+<br>
+<a href="/merchants/<%= @merchant.id %>">Back to merchant's page</a>
